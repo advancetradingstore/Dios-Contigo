@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<title>Luz de Paz | Versículos, reflexiones y fe</title>
+<meta name="description" content="Versículos, reflexiones profundas y curiosidades históricas de la Biblia para fortalecer tu fe cada día.">
+<style>
+:root{
+  --bg:#0b0d12;--bg2:#12151d;--card:#161a24;--line:#262b38;
+  --gold:#d4af6a;--gold2:#f0d79a;--text:#ece8df;--muted:#9a9a9f;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 600px at 50% -10%,#1a1f2e 0%,var(--bg) 60%) fixed;color:var(--text);
+  font-family:Georgia,'Times New Roman',serif;line-height:1.75;font-size:17px;padding-bottom:90px}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:50}
+
+/* Top bar */
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-family:system-ui,sans-serif;font-size:13px}
+.brand{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.live{display:flex;align-items:center;gap:7px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:5px 11px;border-radius:99px}
+.dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.live b{color:var(--text)}
+
+/* Ads */
+.ad{margin:22px auto;text-align:center}
+.ad small{display:block;font:10px system-ui,sans-serif;letter-spacing:.15em;color:#5d6070;text-transform:uppercase;margin-bottom:5px}
+.ad .slot{margin:0 auto;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.015);
+  display:flex;align-items:center;justify-content:center;color:#454859;font:12px system-ui,sans-serif;overflow:hidden;max-width:100%}
+.s320{width:320px;height:50px}.s300{width:300px;height:250px}.sfluid{width:100%;min-height:100px}
+
+/* Hero */
+.hero{text-align:center;padding:38px 0 26px}
+.cross{width:34px;height:46px;margin:0 auto 18px;position:relative;filter:drop-shadow(0 0 12px rgba(212,175,106,.55))}
+.cross:before,.cross:after{content:"";position:absolute;background:linear-gradient(var(--gold2),var(--gold));border-radius:2px}
+.cross:before{left:15px;top:0;width:4px;height:46px}
+.cross:after{left:3px;top:13px;width:28px;height:4px}
+h1{font-size:clamp(30px,8vw,44px);font-weight:400;line-height:1.2;letter-spacing:.01em}
+h1 em{color:var(--gold);font-style:italic}
+.sub{color:var(--muted);font-style:italic;margin-top:12px;font-size:16px}
+
+/* Blessing of the day */
+.bless{background:linear-gradient(160deg,#1c2130,#12151d);border:1px solid #3a3320;border-radius:20px;padding:28px 22px;text-align:center;margin:10px 0 6px;position:relative;overflow:hidden}
+.bless:before{content:"";position:absolute;inset:-40% -20% auto;height:200px;background:radial-gradient(closest-side,rgba(212,175,106,.18),transparent)}
+.tag{font:600 11px system-ui,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);position:relative}
+.bless blockquote{font-size:21px;line-height:1.55;margin:14px 0 8px;position:relative}
+.ref{color:var(--gold);font:600 13px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;position:relative}
+.actions{display:flex;gap:10px;justify-content:center;margin-top:20px;position:relative;flex-wrap:wrap}
+.btn{font:500 14px system-ui,sans-serif;color:var(--text);background:transparent;border:1px solid #4a4128;padding:10px 18px;border-radius:99px;cursor:pointer;transition:.25s}
+.btn:active{transform:scale(.96)}
+.btn:hover{border-color:var(--gold);color:var(--gold2)}
+.btn.on{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+
+/* Sections */
+h2{font-size:26px;font-weight:400;margin:46px 0 6px;display:flex;align-items:center;gap:12px}
+h2:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+h2 span{color:var(--gold)}
+.lead{color:var(--muted);font-size:15px;margin-bottom:18px;font-style:italic}
+
+.verse{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:20px 20px 16px;margin-bottom:14px}
+.verse p{font-size:19px;line-height:1.6}
+.verse .ref{display:block;margin-top:10px}
+.verse .note{font-size:15px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+.reflect{margin-bottom:26px}
+.reflect h3{font-size:21px;font-weight:400;color:var(--gold2);margin-bottom:8px}
+.reflect p{margin-bottom:12px;color:#d9d5cb}
+.reflect p:first-of-type:first-letter{float:left;font-size:54px;line-height:.85;padding:6px 8px 0 0;color:var(--gold)}
+
+.story{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:22px 20px;margin-bottom:16px}
+.story h3{font-size:20px;font-weight:400;color:var(--gold2);margin-bottom:8px}
+.story p{color:#d4d0c6;margin-bottom:10px}
+.story .lesson{border-left:2px solid var(--gold);padding-left:12px;color:var(--gold2);font-style:italic}
+
+.facts{display:grid;gap:12px}
+.fact{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.fact .n{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font:600 14px system-ui,sans-serif}
+.fact h4{font-size:17px;font-weight:600;color:var(--text);margin-bottom:3px}
+.fact p{font-size:15.5px;color:#b9b6ad;line-height:1.6}
+
+.prayer{text-align:center;padding:30px 20px;margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prayer p{font-size:18px;font-style:italic;color:var(--gold2)}
+.prayer small{display:block;margin-top:10px;font:12px system-ui,sans-serif;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+
+footer{text-align:center;color:#5d6070;font:12px system-ui,sans-serif;margin-top:30px;padding-bottom:20px}
+
+/* Floating share */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;display:flex;gap:8px}
+.fab button{width:48px;height:48px;border-radius:50%;border:1px solid #4a4128;background:rgba(18,21,29,.92);backdrop-filter:blur(8px);color:var(--gold);font-size:20px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.fab button.on{background:var(--gold);color:#1a1405}
+#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--gold);color:#1a1405;font:600 14px system-ui,sans-serif;padding:10px 18px;border-radius:99px;opacity:0;pointer-events:none;transition:.35s;z-index:60}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.dot{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="wrap">
+  <div class="top">
+    <span class="brand">Luz de Paz</span>
+    <span class="live"><i class="dot"></i><span><b id="online">—</b> leyendo ahora</span></span>
+  </div>
+
+  <!-- ANUNCIO 1: banner superior 320x50 -->
+  <div class="ad">
+    <small>Publicidad</small>
+    <div class="slot s320" id="ad-top">
+      <script>
+        atOptions = {
+          'key' : 'fdd5f2b49c889044ea46191f48680d64',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bicea.org/22/fdd5f2b49c889044ea46191f48680d64"></script>
+    </div>
+  </div>
+
+  <header class="hero rv">
+    <div class="cross"></div>
+    <h1>Un momento de <em>paz</em><br>para tu alma</h1>
+    <p class="sub">Respira. Lee despacio. Dios tiene una palabra para ti hoy.</p>
+  </header>
+
+  <section class="bless rv" id="blessCard">
+    <div class="tag">Tu bendición de hoy</div>
+    <blockquote id="bText"></blockquote>
+    <div class="ref" id="bRef"></div>
+    <div class="actions">
+      <button class="btn" id="saveBtn">♡ Guardar bendición</button>
+      <button class="btn" id="shareBtn">Compartir</button>
+      <button class="btn" id="newBtn">Otra palabra ↻</button>
+    </div>
+  </section>
+
+  <h2 class="rv"><span>I.</span> Versículos que sostienen</h2>
+  <p class="lead rv">Palabras que han consolado a millones durante siglos. Tómate un minuto con cada una.</p>
+
+  <article class="verse rv">
+    <p>“Jehová es mi pastor; nada me faltará.”</p>
+    <span class="ref">Salmos 23:1</span>
+    <div class="note">David escribió esto siendo pastor de ovejas y luego rey. Conocía de cerca la dependencia de una oveja hacia su cuidador: no es una frase poética vacía, es una confesión de confianza total.</div>
+  </article>
+
+  <article class="verse rv">
+    <p>“Fíate de Jehová de todo tu corazón, y no estribes en tu prudencia.”</p>
+    <span class="ref">Proverbios 3:5</span>
+    <div class="note">Confiar no significa dejar de pensar, sino dejar de depender únicamente de nuestra propia visión cuando el camino no se ve claro.</div>
+  </article>
+
+  <article class="verse rv">
+    <p>“No temas, porque yo soy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré.”</p>
+    <span class="ref">Isaías 41:10</span>
+    <div class="note">La promesa no es la ausencia de dificultades, sino la presencia de Dios dentro de ellas.</div>
+  </article>
+
+  <!-- ANUNCIO 2: intermedio -->
+  <div class="ad">
+    <small>Publicidad</small>
+    <div class="slot sfluid" id="ad-mid">
+      <script>
+        atOptions = {
+          'key' : 'fdd5f2b49c889044ea46191f48680d64',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bicea.org/22/fdd5f2b49c889044ea46191f48680d64"></script>
+    </div>
+  </div>
+
+  <article class="verse rv">
+    <p>“Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios será contigo en dondequiera que fueres.”</p>
+    <span class="ref">Josué 1:9</span>
+  </article>
+
+  <article class="verse rv">
+    <p>“Alzaré mis ojos a los montes, de donde vendrá mi socorro. Mi socorro viene de Jehová, que hizo los cielos y la tierra.”</p>
+    <span class="ref">Salmos 121:1-2</span>
+    <div class="note">Este es uno de los “cánticos de peregrinación”, que los viajeros cantaban al subir a Jerusalén. Mirar a los montes era mirar el camino difícil… y recordar quién lo sostiene.</div>
+  </article>
+
+  <article class="verse rv">
+    <p>“Encomienda a Jehová tus obras, y tus pensamientos serán afirmados.”</p>
+    <span class="ref">Proverbios 16:3</span>
+  </article>
+
+  <h2 class="rv"><span>II.</span> Reflexiones profundas</h2>
+  <p class="lead rv">Para leer sin prisa, en silencio.</p>
+
+  <section class="reflect rv">
+    <h3>El valor de esperar</h3>
+    <p>Vivimos en una época que odia esperar. Queremos respuestas inmediatas, resultados rápidos, certezas instantáneas. Pero la Biblia está llena de historias donde lo más importante ocurrió durante la espera: Abraham aguardó décadas por un hijo, José pasó años en una cárcel antes de ver el propósito de su dolor, y Moisés pasó cuarenta años en el desierto antes de ser llamado.</p>
+    <p>La espera no es tiempo perdido. Es el taller donde el carácter se forma, donde la fe deja de ser una idea y se convierte en una raíz. Quizá hoy sientas que nada se mueve. Recuerda: bajo la tierra, la semilla ya está trabajando mucho antes de que alguien vea el brote.</p>
+    <p>Confiar en medio de la espera no es resignación; es una forma silenciosa de valentía.</p>
+  </section>
+
+  <section class="reflect rv">
+    <h3>Descansar no es rendirse</h3>
+    <p>Jesús dijo: “Venid a mí todos los que estáis trabajados y cargados, que yo os haré descansar” (Mateo 11:28). Fíjate en que no dice “vengan los que ya lo tienen resuelto”, sino los cansados. La invitación es precisamente para quien llega agotado.</p>
+    <p>Hay un cansancio que ningún sueño cura: el de cargar solos con todo. Aprender a soltar una preocupación en oración no la hace desaparecer de inmediato, pero cambia quién la sostiene. Hoy, nombra en voz baja aquello que te pesa, y entrégalo.</p>
+  </section>
+
+  <section class="reflect rv">
+    <h3>Pequeños actos, gran fe</h3>
+    <p>No todas las historias de fe son grandes milagros. Muchas son decisiones diarias: perdonar a alguien, decir la verdad con amabilidad, ayudar sin que nadie lo sepa, orar cuando no tienes ganas. La fe madura rara vez hace ruido.</p>
+    <p>Jesús habló del grano de mostaza, la semilla más pequeña, que crece hasta ser un árbol donde anidan las aves. Lo que hoy parece insignificante en tu vida puede estar creciendo hacia algo que todavía no imaginas.</p>
+  </section>
+
+  <h2 class="rv"><span>III.</span> Historias de fe</h2>
+
+  <section class="story rv">
+    <h3>David y el gigante: la fe no mide tamaños</h3>
+    <p>Todo un ejército temblaba ante Goliat, un guerrero entrenado desde joven. Nadie quería enfrentarlo. Entonces apareció un muchacho pastor, sin armadura, con una honda y cinco piedras lisas del arroyo.</p>
+    <p>David no ganó por ser el más fuerte, sino porque miraba el problema desde otro lugar: no “es demasiado grande para vencerlo”, sino “es demasiado grande para que Dios no lo alcance”.</p>
+    <p class="lesson">Lo que te asusta hoy no es más grande que Aquel en quien confías.</p>
+  </section>
+
+  <section class="story rv">
+    <h3>Daniel: fidelidad cuando nadie aplaude</h3>
+    <p>Daniel era un joven exiliado en Babilonia, un imperio extranjero con otra cultura y otros dioses. Aun así, se mantuvo fiel a sus convicciones con calma y respeto, sin arrogancia. Su constancia en la oración fue tan visible que sus enemigos la usaron en su contra, y terminó en el foso de los leones.</p>
+    <p>La historia no termina con la valentía de Daniel, sino con la fidelidad de Dios. Y mucho antes del foso, su verdadera victoria fue haber decidido quién sería cada día en lo pequeño.</p>
+    <p class="lesson">La fidelidad diaria prepara el corazón para las pruebas grandes.</p>
+  </section>
+
+  <!-- ANUNCIO 3: rectángulo 300x250 -->
+  <div class="ad">
+    <small>Publicidad</small>
+    <div class="slot s300" id="ad-mid2">
+      <script>
+        atOptions = {
+          'key' : '383551180e569ab56b60743888307552',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bicea.org/22/383551180e569ab56b60743888307552"></script>
+    </div>
+  </div>
+
+  <h2 class="rv"><span>IV.</span> Curiosidades históricas</h2>
+  <p class="lead rv">Datos sobre el libro más leído y traducido de la historia.</p>
+
+  <div class="facts">
+    <div class="fact rv"><div class="n">01</div><div><h4>Una biblioteca, no un solo libro</h4><p>La Biblia reúne 66 libros escritos por unos 40 autores distintos a lo largo de aproximadamente 1.500 años: pastores, reyes, pescadores, médicos y profetas.</p></div></div>
+    <div class="fact rv"><div class="n">02</div><div><h4>Los Rollos del Mar Muerto</h4><p>En 1947, un pastor beduino encontró en cuevas de Qumrán antiguos manuscritos. Entre ellos hay copias de casi todos los libros del Antiguo Testamento, con más de dos mil años de antigüedad, que confirmaron la notable fidelidad de la transmisión del texto.</p></div></div>
+    <div class="fact rv"><div class="n">03</div><div><h4>La Septuaginta</h4><p>Hacia el siglo III a. C. se tradujo el Antiguo Testamento del hebreo al griego en Alejandría. Fue la Biblia que muchos autores del Nuevo Testamento citaron.</p></div></div>
+    <div class="fact rv"><div class="n">04</div><div><h4>Los capítulos son un invento posterior</h4><p>Los textos originales no tenían capítulos ni versículos. La división en capítulos se atribuye a Stephen Langton hacia el 1227, y la numeración de versículos que usamos hoy se popularizó en el siglo XVI con Robert Estienne.</p></div></div>
+    <div class="fact rv"><div class="n">05</div><div><h4>La Biblia de Gutenberg</h4><p>Hacia 1455, Johannes Gutenberg imprimió la Biblia en Alemania, uno de los primeros grandes libros hechos con imprenta de tipos móviles. Marcó el inicio de una nueva era de difusión del conocimiento.</p></div></div>
+    <div class="fact rv"><div class="n">06</div><div><h4>El capítulo más corto y el más largo</h4><p>El Salmo 117 es el capítulo más breve de la Biblia (solo dos versículos), mientras que el Salmo 119 es el más largo, con 176 versículos, y es un poema acróstico basado en el alfabeto hebreo.</p></div></div>
+    <div class="fact rv"><div class="n">07</div><div><h4>Códices antiguos</h4><p>El Códice Sinaítico y el Códice Vaticano, del siglo IV, están entre los manuscritos bíblicos completos más antiguos que se conservan y son clave para estudiar el texto original.</p></div></div>
+    <div class="fact rv"><div class="n">08</div><div><h4>Un libro para todos los idiomas</h4><p>La Biblia completa ha sido traducida a más de 700 idiomas, y porciones de ella a miles más, lo que la convierte en el libro más traducido de la historia.</p></div></div>
+  </div>
+
+  <div class="prayer rv">
+    <p>“Señor, dame paz en medio del ruido, fe en medio de la duda y gratitud por este día. Amén.”</p>
+    <small>Oración para cerrar</small>
+  </div>
+
+  <!-- ANUNCIO 4 final: 300x250 -->
+  <div class="ad">
+    <small>Publicidad</small>
+    <div class="slot s300" id="ad-end">
+      <script>
+        atOptions = {
+          'key' : '383551180e569ab56b60743888307552',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bicea.org/22/383551180e569ab56b60743888307552"></script>
+    </div>
+  </div>
+
+  <footer>Luz de Paz · Vuelve mañana por una nueva palabra ✝</footer>
+</div>
+
+<div class="fab">
+  <button id="fabSave" aria-label="Guardar bendición">♡</button>
+  <button id="fabShare" aria-label="Compartir">↗</button>
+</div>
+<div id="toast"></div>
+
+<script>
+(function(){
+  // ---- Bendiciones (Reina-Valera 1909, dominio público) ----
+  var B=[
+    ["Todo lo puedo en Cristo que me fortalece.","Filipenses 4:13"],
+    ["Jehová es mi pastor; nada me faltará.","Salmos 23:1"],
+    ["Fíate de Jehová de todo tu corazón, y no estribes en tu prudencia.","Proverbios 3:5"],
+    ["No temas, porque yo soy contigo; siempre te ayudaré.","Isaías 41:10"],
+    ["Encomienda a Jehová tus obras, y tus pensamientos serán afirmados.","Proverbios 16:3"],
+    ["Venid a mí todos los que estáis trabajados y cargados, que yo os haré descansar.","Mateo 11:28"],
+    ["Mi socorro viene de Jehová, que hizo los cielos y la tierra.","Salmos 121:2"]
+  ];
+  var $=function(id){return document.getElementById(id)};
+  var toast=$('toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2200)}
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+
+  // Bendición del día (cambia cada día, estable durante el día)
+  var d=new Date(),seed=d.getFullYear()*372+d.getMonth()*31+d.getDate();
+  var idx=seed%B.length;
+  function show(i){
+    idx=i;$('bText').textContent='“'+B[i][0]+'”';$('bRef').textContent=B[i][1];refreshSave();
+  }
+  function isSaved(){try{return (JSON.parse(store('lp_saved')||'[]')).indexOf(B[idx][1])>-1}catch(e){return false}}
+  function refreshSave(){
+    var s=isSaved();
+    $('saveBtn').textContent=s?'♥ Bendición guardada':'♡ Guardar bendición';
+    $('saveBtn').classList.toggle('on',s);
+    $('fabSave').textContent=s?'♥':'♡';
+    $('fabSave').classList.toggle('on',s);
+  }
+  function toggleSave(){
+    var arr=[];try{arr=JSON.parse(store('lp_saved')||'[]')}catch(e){}
+    var r=B[idx][1],p=arr.indexOf(r);
+    if(p>-1){arr.splice(p,1);say('Quitada de guardados')}else{arr.push(r);say('Bendición guardada ♥')}
+    store('lp_saved',JSON.stringify(arr));refreshSave();
+  }
+  function share(){
+    var text='“'+B[idx][0]+'” — '+B[idx][1]+'\n\nLuz de Paz';
+    var url=location.href.split('#')[0];
+    if(navigator.share){navigator.share({title:'Luz de Paz',text:text,url:url}).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(text+'\n'+url).then(function(){say('Copiado para compartir')},function(){say('No se pudo copiar')})}
+    else say('Copia el enlace para compartir');
+  }
+  $('saveBtn').onclick=$('fabSave').onclick=toggleSave;
+  $('shareBtn').onclick=$('fabShare').onclick=share;
+  $('newBtn').onclick=function(){show((idx+1+Math.floor(Math.random()*(B.length-1)))%B.length)};
+  show(idx);
+
+  // ---- Contador en vivo orgánico ----
+  var h=d.getHours(),base=h>=6&&h<=23?140:60;
+  var n=base+Math.floor(Math.random()*60);
+  var el=$('online');
+  function paint(){el.textContent=n.toLocaleString('es-AR')}
+  function tick(){
+    var r=Math.random(),step=r<.45?1:r<.8?-1:r<.9?2:-2;
+    n=Math.max(base-30,n+step);paint();
+    setTimeout(tick,2500+Math.random()*5500);
+  }
+  paint();setTimeout(tick,3000);
+
+  // ---- Barra de progreso ----
+  var bar=$('progress'),tick2=false;
+  addEventListener('scroll',function(){
+    if(tick2)return;tick2=true;
+    requestAnimationFrame(function(){
+      var m=document.documentElement.scrollHeight-innerHeight;
+      bar.style.width=(m>0?scrollY/m*100:0)+'%';tick2=false;
+    });
+  },{passive:true});
+
+  // ---- Animaciones de aparición ----
+  var items=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+    items.forEach(function(i){io.observe(i)});
+  }else items.forEach(function(i){i.classList.add('in')});
+})();
+</script>
+</body>
+</html>
